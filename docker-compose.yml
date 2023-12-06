@@ -30,6 +30,7 @@ services:
 
   hello-service:
     build: ./hello-service
+    image: hello-service:v1
     restart: always
     hostname: hello-service
     ports:
@@ -37,6 +38,7 @@ services:
 
   user-service:
     build: ./user-service
+    image: user-service:v1
     restart: always
     hostname: user-service
     ports:

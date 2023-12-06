@@ -1,6 +1,3 @@
-docker.network:
-	docker network create kong-net
-
 docker.up:
 	docker-compose up -d
 
@@ -8,4 +5,6 @@ docker.down:
 	docker-compose down
 
 docker.clean:
-	docker compose down && docker network rm kong-net 
+	docker-compose kill && docker-compose rm -f
+	docker rmi hello-service:v1
+	docker rmi user-service:v1
