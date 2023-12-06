@@ -1,8 +1,8 @@
 version: "3.9"
 
 networks:
-  kong-net:
-    external: true
+  default:
+    name: kong-net
 
 services:
   kong:
@@ -28,10 +28,17 @@ services:
     volumes:
       - ./config:/opt/kong
 
-  sayhello-service:
-    build: .
+  hello-service:
+    build: ./hello-service
     restart: always
-    hostname: sayhello-service
+    hostname: hello-service
     ports:
       - 4000:4000
+
+  user-service:
+    build: ./user-service
+    restart: always
+    hostname: user-service
+    ports:
+      - 4001:4001
     

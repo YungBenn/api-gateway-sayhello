@@ -2,12 +2,19 @@ _format_version: "2.1"
 _transform: true
 
 services:
-- url: http://sayhello-service:4000
-  name: sayhello
+- url: http://hello-service:4000
+  name: hello-service
   protocol: http
   routes:
-  - name: sayhello
+  - name: hello-route
     paths:
-    - /sayhello
+    - /hello
     strip_path: true
- 
+- url: http://user-service:4001
+  name: user-service
+  protocol: http
+  routes:
+  - name: user-route
+    paths:
+    - /user
+    strip_path: true

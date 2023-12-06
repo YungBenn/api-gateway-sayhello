@@ -15,6 +15,6 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/hello", helloWorldHandler)
+	http.HandleFunc("/world", helloWorldHandler)
 	http.ListenAndServe(":4000", nil)
 }
