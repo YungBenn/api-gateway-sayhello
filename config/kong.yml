@@ -1,0 +1,13 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+- url: http://sayhello-service:4000
+  name: sayhello
+  protocol: http
+  routes:
+  - name: sayhello
+    paths:
+    - /sayhello
+    strip_path: true
+ 
